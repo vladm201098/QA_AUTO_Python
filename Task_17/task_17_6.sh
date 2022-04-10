@@ -7,7 +7,7 @@ do
 	case $variable in
 		Да  ) echo "Вы выбрали установить python"
 		break;;
-		Нет ) echo "Уходи дверь закрой"
+		Нет ) echo "Не правильный вариант"
 		break;;
 		*   ) echo "Выберите действие!!!";;
 esac
