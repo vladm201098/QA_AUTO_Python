@@ -1,5 +1,6 @@
 import pytest
 
+
 class TestSchool:
 
     @pytest.mark.positive
@@ -8,26 +9,26 @@ class TestSchool:
 
     @pytest.mark.positive
     def test_marks_one_student_positive(self, students):
-        assert students.marks(5, 6) == 'Vinahradau '
+        assert students.marks(5, 6) == 'Sadovskiy '
 
     @pytest.mark.positive
     def test_marks_some_students_positive(self, students):
-        assert students.marks(7, 8) == ('Zhendi ')
+        assert students.marks(7, 8) == ('Kapashilova ')
 
     @pytest.mark.positive
     @pytest.mark.parametrize("group, exp_res", [
-        (1, "Skachek "),
-        (3, "Zhendi "),
-        (2, "Proshych Vinahradau ")
+        (1, "Hampe "),
+        (3, "Kapashilova "),
+        (2, "Medvedev Sadovskiy ")
     ])
     def test_group_positive(self, group, exp_res, students):
         assert students.group(group) == exp_res
 
     @pytest.mark.positive
     @pytest.mark.parametrize("automat, exp_res", [
-        (9, "Skachek "),
-        (6, "Skachek Proshych Zhendi "),
-        (5, "Skachek Proshych Vinahradau Zhendi ")
+        (9, "Hampe "),
+        (6, "Hampe Medvedev Kapashilova "),
+        (5, "Hampe Medvedev Sadovskiy Kapashilova ")
     ])
     def test_automat_positive(self, automat, exp_res, students):
         assert students.automat(automat) == exp_res
@@ -38,26 +39,26 @@ class TestSchool:
 
     @pytest.mark.negative
     def test_marks_one_student_negative(self, students):
-        assert students.marks(9, 10) != 'Vinahradau '
+        assert students.marks(9, 10) != 'Sadovskiy '
 
     @pytest.mark.negative
     def test_marks_some_students_negative(self, students):
-        assert students.marks(6, 7) != ('Skachek Vinahradau ')
+        assert students.marks(6, 7) != ('Hampe Sadovskiy ')
 
     @pytest.mark.negative
     @pytest.mark.parametrize("group, exp_res", [
-        (3, "Proshych Vinahradau "),
-        (1, "Zhendi "),
-        (2, "Skachek ")
+        (3, "Medvedev Sadovskiy "),
+        (1, "Kapashilova "),
+        (2, "Hampe ")
     ])
     def test_group_negative(self, group, exp_res, students):
         assert students.group(group) != exp_res
 
     @pytest.mark.negative
     @pytest.mark.parametrize("automat, exp_res", [
-        (9, "Proshych "),
-        (6, "Proshych Zhendi "),
-        (5, "Skachek Vinahradau ")
+        (9, "Medvedev "),
+        (6, "Medvedev Kapashilova "),
+        (5, "Hampe Sadovskiy ")
     ])
     def test_automat_negative(self, automat, exp_res, students):
         assert students.automat(automat) != exp_res
