@@ -6,8 +6,8 @@ import unittest
 class TestMyStore(unittest.TestCase):
     browser = None
     url = "http://automationpractice.com/index.php?controller=authentication&back=my-account"
-    mail = 'alesia_94@bk.ru'
-    password = 'Qwe123456!'
+    mail = 'vladm201098112@gmail.com'
+    password = '123456Qwer_'
 
     @classmethod
     def setUpClass(cls) -> None:

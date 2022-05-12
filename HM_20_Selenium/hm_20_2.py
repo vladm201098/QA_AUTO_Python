@@ -8,16 +8,16 @@ from selenium.webdriver.support.select import Select
 class TestRegistrations(unittest.TestCase):
     browser = None
     url = "https://demo.guru99.com/test/newtours/register.php"
-    first_name = 'Alesia'
-    last_name = 'Kapashilova'
-    phone = '+37529251****'
-    email = 'alesia_94@bk.ru'
-    address = 'pr.Gazety Pravda'
-    city = 'Minsk'
-    state = 'RB'
-    post_code = '220116'
-    user_name = 'Alesia'
-    passw = 'Qwe123456!'
+    first_name = 'Vladislav'
+    last_name = 'Medvedev'
+    phone = '+48793******'
+    email = 'vladm201098112@gmail.com'
+    address = 'Wejherowska'
+    city = 'Wroclaw'
+    state = 'PL'
+    post_code = '54239'
+    user_name = 'vladm'
+    passw = '123456Qwer_'
 
     @classmethod
     def setUpClass(cls) -> None:
@@ -68,7 +68,7 @@ class TestRegistrations(unittest.TestCase):
 
         country_field = Select(
             self.browser.find_element(by=By.NAME, value="country"))
-        country_field.select_by_value("BELARUS")
+        country_field.select_by_value("POLAND")
 
         field_user_name = self.browser.find_element(by=By.ID, value="email")
         field_user_name.click()
