@@ -23,16 +23,16 @@ class Test_Calc(unittest.TestCase):
         self.assertEqual(self.calculator.div(114, 3), 38)
 
     def test_negative_sum_int(self):
-        self.assertEqual(self.calculator.sum(7, 10), 2)
+        self.assertNotEqual(self.calculator.sum(7, 10), 2)
 
     def test_negative_diff(self):
-        self.assertEqual(self.calculator.diff(73, 13), 59)
+        self.assertNotEqual(self.calculator.diff(73, 13), 59)
 
     def test_negative_mult(self):
-        self.assertEqual(self.calculator.mult(11, 3), 3)
+        self.assertNotEqual(self.calculator.mult(11, 3), 3)
 
     def test_negative_div(self):
-        self.assertEqual(self.calculator.div(114, 3), 0)
+        self.assertNotEqual(self.calculator.div(114, 3), 0)
 
     def test_error_mult_first(self):
         self.assertRaises(TypeError, self.calculator.mult(100, 'ffffffff'), 'aaa')
