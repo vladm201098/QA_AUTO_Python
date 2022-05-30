@@ -6,13 +6,16 @@ import unittest
 class TestMyStore(unittest.TestCase):
     browser = None
     url = "http://automationpractice.com/index.php?controller=authentication&back=my-account"
-    mail = 'vladm201098112@gmail.com'
-    password = '123456Qwer_'
+    mail = 'alesia_94@bk.ru'
+    password = 'Qwe123456!'
 
     @classmethod
     def setUpClass(cls) -> None:
-        cls.browser = webdriver.Chrome(
-            "chromedriver")
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--disable-gpu')
+        cls.browser = webdriver.Chrome(chrome_options=chrome_options, executable_path='/home/alesya/les/homework/tests/chromedriver')
         cls.browser.maximize_window()
         cls.browser.get(cls.url)
         cls.browser.implicitly_wait(10)
