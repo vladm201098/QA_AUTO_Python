@@ -17,3 +17,4 @@ def students():
     yield school
     del school.students[:]
     print('\nThere is no any student at school')
+
